@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build a Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Documentation Technique sur Flexbox</header>
+      <ul>
+        <li>
+          <a class="nav-link" href="Introduction_à_Flexbox"
+            >Introduction à Flexbox</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="Les_Fondamentaux_de_Flexbox"
+            >Les Fondamentaux de Flexbox</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="Alignement_et_Distribution"
+            >Alignement et Distribution</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="Gestion_de_l_espace">Gestion de l'espace</a>
+        </li>
+        <li>
+          <a class="nav-link" href="Techniques_Avancées">Techniques Avancées</a>
+        </li>
+        <li>
+          <a class="nav-link" href="Astuces_et_Meilleures_Pratique"
+            >Astuces et Meilleures Pratiques</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="Exemples_et_Cas_d_Utilisation"
+            >Exemples et Cas d'Utilisation</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="Ressources_Additionnelles"
+            >Ressources Additionnelles</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section">
+        <header id="Introduction_à_Flexbox">Introduction à Flexbox</header>
+        <p>
+          La Flexible Box Layout Module, plus communément appelée Flexbox, est
+          une approche révolutionnaire en matière de mise en page dans le
+          développement web moderne. Cette introduction vise à présenter les
+          fondamentaux de Flexbox, ses avantages, et sa compatibilité avec les
+          navigateurs.
+        </p>
+        <h3>Qu'est-ce que Flexbox ?</h3>
+        <ul>
+          <li>
+            Flexbox est un module CSS qui offre une méthode de disposition
+            flexible pour les éléments dans un conteneur.
+          </li>
+          <li>
+            Il permet un alignement, un dimensionnement et une distribution plus
+            efficaces des éléments dans une interface utilisateur.
+          </li>
+        </ul>
+        <h3>Avantages de l'utilisation de Flexbox</h3>
+        <ul>
+          <li>
+            Simplification de la gestion de la mise en page, en particulier pour
+            les conceptions responsives.
+          </li>
+          <li>
+            Contrôle plus précis de l'alignement et de la distribution des
+            éléments.
+          </li>
+          <li>
+            Réduction de la nécessité de recourir à des techniques CSS complexes
+            ou à des frameworks pour la mise en page.
+          </li>
+        </ul>
+        <h3>Compatibilité des navigateurs</h3>
+        <ul>
+          <li>
+            Flexbox est largement pris en charge par les navigateurs modernes, y
+            compris Chrome, Firefox, Safari, Edge, et Opera.
+          </li>
+          <li>
+            Des solutions de secours peuvent être nécessaires pour les versions
+            plus anciennes d'Internet Explorer (IE 10 et versions antérieures).
+          </li>
+        </ul>
+      </section>
+      <section class="main-section">
+        <header id="Les_Fondamentaux_de_Flexbox">
+          Les Fondamentaux de Flexbox
+        </header>
+        <p>
+          Dans cette partie, nous explorerons les concepts de base de Flexbox
+          ainsi que les principales propriétés et valeurs qui définissent son
+          comportement.
+        </p>
+        <h3>Concepts de base</h3>
+        <ul>
+          <li>
+            Flexbox fonctionne en transformant un conteneur en un "conteneur
+            flexible" et ses enfants en "éléments flexibles".
+          </li>
+          <li>
+            Les éléments flexibles à l'intérieur d'un conteneur peuvent être
+            alignés et distribués de manière dynamique selon les besoins de mise
+            en page.
+          </li>
+        </ul>
+        <h3>Principes de conteneur et d'éléments flexibles</h3>
+        <ul>
+          <li>
+            Le conteneur flex (élément parent) est défini en utilisant la
+            propriété display: flex;.
+          </li>
+          <li>
+            Les éléments enfants deviennent automatiquement des éléments
+            flexibles lorsqu'ils sont placés à l'intérieur d'un conteneur flex.
+          </li>
+        </ul>
+        <h3>Propriétés de conteneur flex</h3>
+        <div class="propriete">
+          <h3>1. display :</h3>
+          <p>Définit le type d'affichage du conteneur (flexible).</p>
+          <pre><code>.flex-container {
+        display: flex;
+      }</code></pre>
+          <p>
+            Dans cet exemple, tous les éléments de la classe .flex-container
+            deviennent des conteneurs flexibles, permettant l'utilisation des
+            autres propriétés Flexbox.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>2. flex-direction :</h3>
+          <p>
+            Contrôle la direction principale dans laquelle les éléments
+            flexibles sont disposés.
+          </p>
+          <pre><code>.flex-container {
+        flex-direction: row; /* Disposition horizontale */
+      }</code></pre>
+        </div>
+        <div class="propriete">
+          <h3>3. flex-wrap :</h3>
+          <p>
+            La propriété flex-wrap spécifie si les éléments flexibles doivent
+            être enroulés dans plusieurs lignes ou colonnes si nécessaire.
+          </p>
+          <pre><code>.flex-container {
+            flex-wrap: wrap; /* Enroulement sur plusieurs lignes si nécessaire */
+          }</code></pre>
+          <p>
+            Dans cet exemple, si les éléments ne peuvent pas tenir sur une seule
+            ligne, ils seront placés sur des lignes supplémentaires.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>4. flex-flow :</h3>
+          <p>
+            La propriété flex-flow est une propriété raccourcie pour définir à
+            la fois la direction et le comportement de l'enroulement des
+            éléments.
+          </p>
+          <pre><code>.flex-container {
+            flex-flow: column wrap; /* Disposition en colonne avec enroulement sur plusieurs lignes */
+          }</code></pre>
+          <p>
+            Dans cet exemple, les éléments sont disposés en colonnes et s'ils ne
+            peuvent pas tenir sur une seule colonne, ils seront placés sur des
+            colonnes supplémentaires.
+          </p>
+        </div>
+      </section>
+      <section class="main-section">
+        <header id="Alignement_et_Distribution">
+          Alignement et Distribution
+        </header>
+        <div class="propriete">
+          <h3>1. align-self :</h3>
+          <p>
+            La propriété align-self permet d'aligner individuellement chaque
+            élément d'un conteneur flex sur l'axe transversal, offrant un
+            contrôle granulaire sur le positionnement des éléments.
+          </p>
+          <pre><code>.flex-item {
+            align-self: flex-end; /* Aligner cet élément en bas */
+          }</code></pre>
+          <p>
+            Dans cet exemple, les éléments de la classe .flex-container sont
+            centrés verticalement sur l'axe transversal.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>2. align-content</h3>
+          <p>
+            La propriété align-content contrôle l'espacement entre les lignes
+            d'un conteneur flex multi-lignes, ajustant l'espacement vertical
+            lorsque l'espace disponible est supérieur à la taille combinée des
+            éléments.
+          </p>
+          <pre><code>.flex-container {
+            align-content: space-between; /* Espacement uniforme entre les lignes */
+          }</code></pre>
+          <p>
+            Dans cet exemple, l'espace supplémentaire entre les lignes
+            d'éléments flexibles est réparti uniformément.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>3. align-items :</h3>
+          <p>
+            La propriété align-items contrôle l'alignement des éléments
+            flexibles le long de l'axe transversal.
+          </p>
+          <pre><code>.flex-container {
+            align-items: center; /* Alignement centré sur l'axe transversal */
+          }</code></pre>
+          <p>
+            Dans cet exemple, les éléments de la classe .flex-container sont
+            centrés verticalement sur l'axe transversal.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>4. justify-content :</h3>
+          <p>
+            La propriété justify-content définit l'alignement des éléments
+            flexibles le long de l'axe principal.
+          </p>
+          <pre><code>.flex-container {
+            justify-content: space-between; /* Espacement uniforme entre les éléments */
+          }</code></pre>
+          <p>
+            Dans cet exemple, les éléments de la classe .flex-container sont
+            répartis de manière uniforme le long de l'axe principal, laissant un
+            espace égal entre eux.
+          </p>
+        </div>
+      </section>
+      <section class="main-section">
+        <header id="Gestion_de_l_espace">Gestion de l'espace</header>
+        <div class="propriete">
+          <h3>1. flex-grow</h3>
+          <p>
+            La propriété flex-grow contrôle la capacité d'un élément flexible à
+            agrandir son espace disponible lorsqu'il reste de l'espace
+            supplémentaire dans le conteneur flex.
+          </p>
+          <p>
+            Considérons un conteneur flex avec trois éléments enfants où seul le
+            deuxième élément a une valeur flex-grow définie :
+          </p>
+          <pre><code>.flex-item {
+            flex-grow: 1; /* Tous les éléments grandissent de manière égale */
+          }
+          
+          .flex-item:nth-child(2) {
+            flex-grow: 2; /* Cet élément a une croissance double */
+          }</code></pre>
+          <p>
+            Dans cet exemple, le deuxième élément aura deux fois plus d'espace
+            que les autres éléments lorsqu'il y aura de l'espace supplémentaire
+            disponible dans le conteneur.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>2. flex-shrink</h3>
+          <p>
+            La propriété flex-shrink contrôle la capacité d'un élément flexible
+            à rétrécir lorsque l'espace disponible dans le conteneur flex est
+            insuffisant pour tous les éléments.
+          </p>
+          <p>
+            Considérons un conteneur flex avec trois éléments enfants où le
+            troisième élément a une valeur flex-shrink définie pour qu'il
+            rétrécisse plus rapidement que les autres :
+          </p>
+          <pre><code>.flex-item {
+            flex-shrink: 1; /* Tous les éléments rétrécissent de manière égale */
+          }
+          
+          .flex-item:nth-child(3) {
+            flex-shrink: 2; /* Cet élément rétrécit deux fois plus vite */
+          }
+          </code></pre>
+          <p>
+            Dans cet exemple, lorsque l'espace disponible devient insuffisant,
+            le troisième élément rétrécira deux fois plus vite que les autres
+            éléments.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>3. flex-basis</h3>
+          <p>
+            La propriété flex-basis définit la taille initiale d'un élément
+            flexible avant que l'espace supplémentaire ne soit distribué.
+          </p>
+          <p>
+            Considérons un conteneur flex avec trois éléments enfants où tous
+            les éléments ont une taille de base différente :
+          </p>
+          <pre><code>.flex-item {
+            flex-basis: 100px; /* Taille de base pour tous les éléments */
+          }
+          
+          .flex-item:nth-child(2) {
+            flex-basis: auto; /* Taille de base automatique */
+          }</code></pre>
+          <p>
+            Dans cet exemple, le deuxième élément aura une taille de base
+            automatique, tandis que les autres auront une taille de base fixée à
+            100 pixels.
+          </p>
+        </div>
+      </section>
+      <section class="main-section">
+        <header id="Techniques_Avancées">Techniques Avancées</header>
+        <p>
+          Dans cette section, nous explorerons des techniques avancées pour
+          tirer le meilleur parti de Flexbox et résoudre des défis de mise en
+          page plus complexes.
+        </p>
+        <div class="propriete">
+          <h3>1. Imbrication des Éléments Flex</h3>
+          <p>
+            L'imbrication des éléments flex permet de créer des mises en page
+            complexes en utilisant des conteneurs flex imbriqués.
+          </p>
+          <p>
+            Considérons un scénario où nous avons un conteneur flex principal
+            avec plusieurs éléments enfants, et chaque élément enfant est
+            lui-même un conteneur flex avec ses propres enfants :
+          </p>
+          <code>
+            &lt;div class="flex-container"&gt;<br />
+            &nbsp;&nbsp;&lt;div class="flex-item"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Contenu de l'élément 1 --&gt;<br />
+            &nbsp;&nbsp;&lt;/div&gt;<br />
+            &nbsp;&nbsp;&lt;div class="flex-item"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="nested-flex-container"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Contenu de l'élément 2,
+            conteneur flex imbriqué --&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+            &nbsp;&nbsp;&lt;/div&gt;<br />
+            &lt;/div&gt;
+          </code>
+          <p>
+            Dans cet exemple, l'élément 2 est un conteneur flex imbriqué à
+            l'intérieur de l'élément 1, ce qui permet une flexibilité et un
+            contrôle supplémentaires sur la disposition.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>2. Utilisation de l'Axe Secondaire</h3>
+          <p>
+            L'utilisation de l'axe secondaire avec la propriété flex-direction
+            permet de créer des dispositions non standard, en utilisant l'axe
+            transversal comme axe principal.
+          </p>
+          <p>
+            Considérons un scénario où nous avons un conteneur flex avec une
+            direction principale définie verticalement et une justification
+            alignée à l'axe secondaire :
+          </p>
+          <pre><code>.flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Alignement sur l'axe secondaire (horizontal) */
+          }</code></pre>
+          <p>
+            Dans cet exemple, les éléments à l'intérieur du conteneur flex
+            seront alignés en bas de l'axe horizontal.
+          </p>
+        </div>
+        <div class="propriete">
+          <h3>3. order</h3>
+          <p>
+            La propriété order permet de contrôler l'ordre dans lequel les
+            éléments flex sont affichés, indépendamment de leur position dans le
+            code source HTML.
+          </p>
+          <p>
+            Considérons un scénario où nous avons un conteneur flex avec des
+            éléments enfants dont l'ordre est inversé :
+          </p>
+          <pre><code>.flex-item {
+            order: 2; /* Ordre inversé */
+          }
+          
+          .flex-item:nth-child(2) {
+            order: 1; /* Ordre initial */
+          }</code></pre>
+          <p>
+            Dans cet exemple, l'élément 1 sera affiché après l'élément 2 dans la
+            disposition même s'il est placé avant dans le code HTML
+          </p>
+        </div>
+      </section>
+      <section class="main-section">
+        <header id="Astuces_et_Meilleures_Pratique">
+          Astuces et Meilleures Pratiques
+        </header>
+        <p></p>
+        <p></p>
+      </section>
+      <section class="main-section">
+        <header id="Exemples_et_Cas_d_Utilisation">
+          Exemples et Cas d'Utilisations
+        </header>
+        <p>
+          Dans cette section, nous partagerons quelques astuces et meilleures
+          pratiques pour optimiser votre utilisation de Flexbox et éviter les
+          pièges courants.
+        </p>
+        <div class="propriete">
+          <h3>1. Utilisation de Valeurs flex Préférées</h3>
+          <p>
+            Il est recommandé d'utiliser les valeurs flex plutôt que les valeurs
+            spécifiques width, height, margin ou padding pour les éléments
+            flexibles, car cela permet une meilleure flexibilité et une mise en
+            page plus dynamique.
+          </p>
+          <pre><code>.flex-item {
+            flex: 1; /* Utilisation de la valeur flex pour la flexibilité */
+          }</code></pre>
+        </div>
+        <div class="propriete">
+          <h3>2. Éviter les Propriétés Redondantes</h3>
+          <p>
+            Évitez d'utiliser des propriétés redondantes qui peuvent entraîner
+            des comportements indésirables ou des conflits de style. Par
+            exemple, width et flex-basis ne devraient pas être utilisés
+            simultanément sur le même élément.
+          </p>
+          <pre><code>.flex-item {
+            /* Évitez d'utiliser width en même temps que flex-basis */
+            /* Utilisez soit width ou flex-basis en fonction de vos besoins */
+          }</code></pre>
+        </div>
+        <div class="propriete">
+          <h3>Maintenir la Structure Logique</h3>
+          <p>
+            Assurez-vous de maintenir une structure logique dans votre code en
+            utilisant des classes CSS et des conteneurs flex de manière
+            appropriée pour faciliter la maintenance et le débogage ultérieurs.
+          </p>
+          <code
+            >&lt;div class="container"&gt;<br />
+            &nbsp;&nbsp;&lt;div class="header"&gt;...&lt;/div&gt;<br />
+            &nbsp;&nbsp;&lt;div class="content"&gt;...&lt;/div&gt;<br />
+            &nbsp;&nbsp;&lt;div class="sidebar"&gt;...&lt;/div&gt;<br />
+            &nbsp;&nbsp;&lt;div class="footer"&gt;...&lt;/div&gt;<br />
+            &lt;/div&gt;</code
+          >
+        </div>
+        <div class="propriete">
+          <h3>4 Tester la Compatibilité entre Navigateurs</h3>
+          <ul>
+            <li>
+              Effectuez des tests approfondis sur différents navigateurs pour
+              vous assurer que votre mise en page Flexbox est compatible avec
+              les versions les plus courantes des navigateurs utilisés par votre
+              public cible.
+            </li>
+            <li>
+              Effectuez des tests sur les navigateurs populaires tels que Google
+              Chrome, Mozilla Firefox, Safari et Microsoft Edge.
+            </li>
+            <li>
+              En suivant ces astuces et meilleures pratiques, vous pourrez
+              exploiter pleinement le potentiel de Flexbox tout en maintenant un
+              code propre et facilement maintenable.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="main-section">
+        <header id="Ressources_Additionnelles">
+          Ressources Additionnelles
+        </header>
+        <div class="ressource">
+          <h3>7.1 Documentation Officielle</h3>
+          <p>
+            La documentation officielle de Flexbox fournie par le W3C est une
+            ressource incontournable pour comprendre en détail les
+            spécifications et les fonctionnalités de Flexbox.
+          </p>
+          <a href="https://www.w3.org/TR/css-flexbox-1/"
+            >Documentation Flexbox sur le W3C</a
+          >
+        </div>
+
+        <div class="ressource">
+          <h3>7.2 Tutoriels en Ligne</h3>
+          <p>
+            De nombreux tutoriels en ligne offrent des explications claires et
+            des exemples pratiques pour apprendre et maîtriser Flexbox, adaptés
+            à tous les niveaux d'expérience.
+          </p>
+          <ul>
+            <li>
+              <a href="https://flexboxfroggy.com/">Flexbox Froggy</a> - Un jeu
+              qui vous enseigne les bases de Flexbox de manière ludique.
+            </li>
+            <li>
+              <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                >CSS-Tricks Guide Flexbox</a
+              >
+              - Un guide complet sur Flexbox avec des exemples détaillés.
+            </li>
+          </ul>
+        </div>
+
+        <div class="ressource">
+          <h3>7.3 Outils de Développement</h3>
+          <p>
+            Des outils de développement tels que les extensions de navigateur et
+            les générateurs de code peuvent simplifier le processus de création
+            et de débogage de mises en page Flexbox.
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://addons.mozilla.org/en-US/firefox/addon/flexbox-inspector/"
+                >Flexbox Inspector</a
+              >
+              - Une extension pour Firefox qui vous permet d'inspecter les
+              conteneurs et les éléments Flexbox.
+            </li>
+            <li>
+              <a href="https://codepen.io/enxaneta/full/adLPwv/"
+                >Flexbox Playground</a
+              >
+              - Un environnement de développement en ligne où vous pouvez
+              expérimenter avec Flexbox et voir instantanément les résultats.
+            </li>
+          </ul>
+        </div>
+
+        <div class="ressource">
+          <h3>7.4 Communautés en Ligne</h3>
+          <p>
+            Les forums et les communautés en ligne sont des endroits précieux
+            pour poser des questions, partager des connaissances et obtenir des
+            conseils sur Flexbox et d'autres sujets liés au développement web.
+          </p>
+          <ul>
+            <li>
+              <a href="https://stackoverflow.com/questions/tagged/flexbox"
+                >Stack Overflow</a
+              >
+              - Une communauté de développeurs où vous pouvez poser des
+              questions et trouver des réponses sur Flexbox.
+            </li>
+            <li>
+              <a href="https://dev.to/t/flexbox">Dev Community</a> - Une
+              plateforme où les développeurs partagent des articles, des
+              tutoriels et des discussions sur Flexbox et d'autres sujets.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
